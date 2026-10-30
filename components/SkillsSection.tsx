@@ -1,44 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
-import { SKILLS_DATA, Skill } from "@/data/portfolioData";
+import React from "react";
+import { SKILLS_DATA } from "@/data/portfolioData";
 import SkillCard from "@/components/SkillCard";
-import { motion, AnimatePresence } from "framer-motion";
-
-type CategoryTab =
-  | "All Skills"
-  | "Languages"
-  | "Web Development"
-  | "Tools & DevOps"
-  | "UI/UX & Design";
-
-const CATEGORIES: CategoryTab[] = [
-  "All Skills",
-  "Languages",
-  "Web Development",
-  "Tools & DevOps",
-  "UI/UX & Design",
-];
+import { motion } from "framer-motion";
 
 export default function SkillsSection() {
-  const [activeTab, setActiveTab] = useState<CategoryTab>("All Skills");
-
-  const getCategoryCount = (cat: CategoryTab) => {
-    if (cat === "All Skills") return SKILLS_DATA.length;
-    return SKILLS_DATA.filter(
-      (s) => s.category === cat || (s.categories && s.categories.includes(cat))
-    ).length;
-  };
-
-  const filteredSkills =
-    activeTab === "All Skills"
-      ? SKILLS_DATA
-      : SKILLS_DATA.filter(
-          (s) =>
-            s.category === activeTab ||
-            (s.categories && s.categories.includes(activeTab))
-        );
-
   return (
     <section
       id="skills"
@@ -76,64 +43,22 @@ export default function SkillsSection() {
               Technologies and tools I work with
             </p>
           </motion.div>
-
-          {/* Filter Tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex items-center justify-center flex-wrap gap-2 mt-8"
-          >
-            {CATEGORIES.map((cat) => {
-              const isActive = activeTab === cat;
-              const count = getCategoryCount(cat);
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveTab(cat)}
-                  className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 border ${
-                    isActive
-                      ? "bg-blue-600 text-white border-blue-500 shadow-md shadow-blue-500/20 scale-105"
-                      : "bg-[#151D2E]/70 dark:bg-[#151D2E]/70 light:bg-white text-slate-400 dark:text-slate-400 light:text-slate-600 border-[#293449] dark:border-[#293449] light:border-slate-300 hover:text-white dark:hover:text-white light:hover:text-slate-900 hover:border-slate-600"
-                  }`}
-                >
-                  <span>{cat}</span>
-                  <span
-                    className={`px-1.5 py-0.2 rounded-full text-[11px] font-semibold ${
-                      isActive
-                        ? "bg-white/20 text-white"
-                        : "bg-[#1E293B] text-slate-400"
-                    }`}
-                  >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </motion.div>
         </div>
 
-        {/* 4-column responsive grid matching the visual reference */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredSkills.map((skill) => (
-              <motion.div
-                key={skill.id}
-                layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.25 }}
-              >
-                <SkillCard skill={skill} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        {/* 4-column responsive grid showing all skills */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {SKILLS_DATA.map((skill, index) => (
+            <motion.div
+              key={skill.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, delay: index * 0.04 }}
+            >
+              <SkillCard skill={skill} />
+            </motion.div>
+          ))}
+        </div>
 
         {/* Subtle bottom note confirming technologies */}
         <div className="mt-12 text-center text-xs text-slate-500 dark:text-slate-500 light:text-slate-400">
