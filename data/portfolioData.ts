@@ -118,13 +118,15 @@ export const ABOUT_HIGHLIGHTS = [
 ];
 
 export const INTEREST_TAGS = [
+  "Computer Networking",
+  "IT Systems & Infrastructure",
+  "Cloud Computing",
+  "Artificial Intelligence & Machine Learning",
   "Software Development",
-  "Artificial Intelligence",
-  "Cybersecurity",
-  "Machine Learning",
   "Web Development",
-  "Data Analysis",
-  "Emerging Technologies",
+  "UI/UX Design",
+  "Database Management & Data Analytics",
+  "Automation & Emerging Technologies",
 ];
 
 export const SKILLS_DATA: Skill[] = [

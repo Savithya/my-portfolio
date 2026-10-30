@@ -70,19 +70,23 @@ function generateCvPdf() {
     "0 -12 Td",
     "(Institute of Technology, University of Moratuwa | Year: 2024 | Completed) Tj",
 
-    // TECHNICAL SKILLS
+    // MY SKILLS
     "/F1 12 Tf",
     "0 -20 Td",
-    "(TECHNICAL SKILLS) Tj",
+    "(MY SKILLS) Tj",
     "/F2 9 Tf",
     "0 -13 Td",
-    "(\\x95 Languages: JavaScript, PHP, C#, C, Python) Tj",
+    "(\\x95 Programming Languages: JavaScript, PHP, C#, C, Python, TypeScript) Tj",
     "0 -12 Td",
-    "(\\x95 Web Development: HTML, Tailwind CSS, Node.js, CSS) Tj",
+    "(\\x95 Web & Frontend: HTML, Tailwind CSS, JavaScript, CSS, Responsive Web Design) Tj",
     "0 -12 Td",
-    "(\\x95 DevOps & Tools: Git, Docker, GitHub, Visual Studio Code) Tj",
+    "(\\x95 Backend & Runtimes: Node.js, PHP, RESTful APIs) Tj",
     "0 -12 Td",
-    "(\\x95 Design & Creative: Figma, Adobe Photoshop) Tj",
+    "(\\x95 DevOps & Version Control: Git, Docker, GitHub, Visual Studio Code) Tj",
+    "0 -12 Td",
+    "(\\x95 UI/UX & Graphic Design: Figma, Adobe Photoshop) Tj",
+    "0 -12 Td",
+    "(\\x95 Databases & Architecture: SQL, MySQL, PL/pgSQL, Data Structures) Tj",
 
     // FEATURED PROJECTS & RESEARCH
     "/F1 12 Tf",
