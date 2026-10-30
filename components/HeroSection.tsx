@@ -187,14 +187,15 @@ export default function HeroSection() {
 
             {/* Rotating gradient ring */}
             <div className="relative w-full h-full rounded-full p-1 bg-gradient-to-tr from-blue-500 via-purple-500 to-cyan-400 shadow-2xl">
-            <div className="relative w-full h-full rounded-full bg-[#0E1526] overflow-hidden border-4 border-[#060914] dark:border-[#060914] light:border-white">
-               <Image
-                  src="/profile.jpg"
+              <div className="relative w-full h-full rounded-full bg-[#0E1526] overflow-hidden border-4 border-[#060914] dark:border-[#060914] light:border-white">
+                <Image
+                  src="/profile.png"
                   alt="Savithya Muthunima"
                   fill
                   className="object-cover"
                   priority
-               />
+                />
+              </div>
             </div>
 
             {/* Floating Decorative Badges */}
