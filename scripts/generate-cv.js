@@ -76,13 +76,13 @@ function generateCvPdf() {
     "(TECHNICAL SKILLS) Tj",
     "/F2 9 Tf",
     "0 -13 Td",
-    "(\\x95 Languages: Python, JavaScript, TypeScript, C++) Tj",
+    "(\\x95 Languages: JavaScript, PHP, C#, C, Python) Tj",
     "0 -12 Td",
-    "(\\x95 Web Development & Databases: CSS, Web Development, SQL, MySQL, PL/pgSQL) Tj",
+    "(\\x95 Web Development: HTML, Tailwind CSS, Node.js, CSS) Tj",
     "0 -12 Td",
-    "(\\x95 AI, Data & CS Concepts: Machine Learning, Data Analysis, Academic Research, Data Structures, Algorithms) Tj",
+    "(\\x95 DevOps & Tools: Git, Docker, GitHub, Visual Studio Code) Tj",
     "0 -12 Td",
-    "(\\x95 Tools & Environments: Visual Studio Code, Anaconda, Jupyter Notebook, GitHub) Tj",
+    "(\\x95 Design & Creative: Figma, Adobe Photoshop) Tj",
 
     // FEATURED PROJECTS & RESEARCH
     "/F1 12 Tf",

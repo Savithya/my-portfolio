@@ -4,7 +4,7 @@
 3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >> endobj
 4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >> endobj
 5 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
-6 0 obj << /Length 2685 >> stream
+6 0 obj << /Length 2575 >> stream
 BT
 /F1 22 Tf
 50 740 Td
@@ -57,13 +57,13 @@ BT
 (TECHNICAL SKILLS) Tj
 /F2 9 Tf
 0 -13 Td
-(\x95 Languages: Python, JavaScript, TypeScript, C++) Tj
+(\x95 Languages: JavaScript, PHP, C#, C, Python) Tj
 0 -12 Td
-(\x95 Web Development & Databases: CSS, Web Development, SQL, MySQL, PL/pgSQL) Tj
+(\x95 Web Development: HTML, Tailwind CSS, Node.js, CSS) Tj
 0 -12 Td
-(\x95 AI, Data & CS Concepts: Machine Learning, Data Analysis, Academic Research, Data Structures, Algorithms) Tj
+(\x95 DevOps & Tools: Git, Docker, GitHub, Visual Studio Code) Tj
 0 -12 Td
-(\x95 Tools & Environments: Visual Studio Code, Anaconda, Jupyter Notebook, GitHub) Tj
+(\x95 Design & Creative: Figma, Adobe Photoshop) Tj
 /F1 12 Tf
 0 -20 Td
 (FEATURED PROJECTS & RESEARCH) Tj
@@ -107,5 +107,5 @@ xref
 0000000396 00000 n 
 trailer << /Size 7 /Root 1 0 R >>
 startxref
-3133
+3023
 %%EOF

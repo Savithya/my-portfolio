@@ -1,7 +1,16 @@
 export interface Skill {
   id: string;
   name: string;
-  category: "Languages" | "Web Development" | "Databases" | "AI & Data" | "Tools" | "Core Concepts";
+  category:
+    | "Languages"
+    | "Web Development"
+    | "Tools & DevOps"
+    | "UI/UX & Design"
+    | "Databases"
+    | "AI & Data"
+    | "Tools"
+    | "Core Concepts";
+  categories?: string[];
   categoryLabel: string;
   iconName: string;
   color: string;
@@ -119,7 +128,130 @@ export const INTEREST_TAGS = [
 ];
 
 export const SKILLS_DATA: Skill[] = [
-  // Category 01 — Programming Languages
+  // 01. HTML
+  {
+    id: "html",
+    name: "HTML",
+    category: "Web Development",
+    categories: ["Web Development"],
+    categoryLabel: "Markup Language",
+    iconName: "html",
+    color: "#E34F26",
+    glowColor: "rgba(227, 79, 38, 0.4)",
+  },
+  // 02. Tailwind CSS
+  {
+    id: "tailwind",
+    name: "Tailwind CSS",
+    category: "Web Development",
+    categories: ["Web Development"],
+    categoryLabel: "CSS Framework",
+    iconName: "tailwind",
+    color: "#06B6D4",
+    glowColor: "rgba(6, 182, 212, 0.4)",
+  },
+  // 03. JavaScript
+  {
+    id: "javascript",
+    name: "JavaScript",
+    category: "Languages",
+    categories: ["Languages", "Web Development"],
+    categoryLabel: "Programming Language",
+    iconName: "javascript",
+    color: "#F7DF1E",
+    glowColor: "rgba(247, 223, 30, 0.35)",
+  },
+  // 04. Node.js
+  {
+    id: "nodejs",
+    name: "Node.js",
+    category: "Web Development",
+    categories: ["Web Development", "Languages"],
+    categoryLabel: "JavaScript Runtime",
+    iconName: "nodejs",
+    color: "#5FA04E",
+    glowColor: "rgba(95, 160, 78, 0.4)",
+  },
+  // 05. PHP
+  {
+    id: "php",
+    name: "PHP",
+    category: "Languages",
+    categories: ["Languages", "Web Development"],
+    categoryLabel: "Server-side Language",
+    iconName: "php",
+    color: "#777BB4",
+    glowColor: "rgba(119, 123, 180, 0.4)",
+  },
+  // 06. C#
+  {
+    id: "csharp",
+    name: "C#",
+    category: "Languages",
+    categories: ["Languages"],
+    categoryLabel: "Programming Language",
+    iconName: "csharp",
+    color: "#A855F7",
+    glowColor: "rgba(168, 85, 247, 0.4)",
+  },
+  // 07. C
+  {
+    id: "c",
+    name: "C",
+    category: "Languages",
+    categories: ["Languages"],
+    categoryLabel: "Systems Programming",
+    iconName: "c",
+    color: "#659AD2",
+    glowColor: "rgba(101, 154, 210, 0.4)",
+  },
+  // 08. Git
+  {
+    id: "git",
+    name: "Git",
+    category: "Tools & DevOps",
+    categories: ["Tools & DevOps"],
+    categoryLabel: "Version Control",
+    iconName: "git",
+    color: "#F05032",
+    glowColor: "rgba(240, 80, 50, 0.4)",
+  },
+  // 09. Docker
+  {
+    id: "docker",
+    name: "Docker",
+    category: "Tools & DevOps",
+    categories: ["Tools & DevOps"],
+    categoryLabel: "Containerization",
+    iconName: "docker",
+    color: "#2496ED",
+    glowColor: "rgba(36, 150, 237, 0.4)",
+  },
+  // 10. Figma
+  {
+    id: "figma",
+    name: "Figma",
+    category: "UI/UX & Design",
+    categories: ["UI/UX & Design"],
+    categoryLabel: "UI/UX Design",
+    iconName: "figma",
+    color: "#F24E1E",
+    glowColor: "rgba(242, 78, 30, 0.4)",
+  },
+  // 11. Photoshop
+  {
+    id: "photoshop",
+    name: "Photoshop",
+    category: "UI/UX & Design",
+    categories: ["UI/UX & Design"],
+    categoryLabel: "Graphic Design",
+    iconName: "photoshop",
+    color: "#31A8FF",
+    glowColor: "rgba(49, 168, 255, 0.4)",
+  },
+];
+
+export const ADDITIONAL_SKILLS_DATA: Skill[] = [
   {
     id: "python",
     name: "Python",
@@ -128,15 +260,6 @@ export const SKILLS_DATA: Skill[] = [
     iconName: "python",
     color: "#3776AB",
     glowColor: "rgba(55, 118, 171, 0.4)",
-  },
-  {
-    id: "javascript",
-    name: "JavaScript",
-    category: "Languages",
-    categoryLabel: "Programming Language",
-    iconName: "javascript",
-    color: "#F7DF1E",
-    glowColor: "rgba(247, 223, 30, 0.35)",
   },
   {
     id: "typescript",
@@ -156,8 +279,6 @@ export const SKILLS_DATA: Skill[] = [
     color: "#00599C",
     glowColor: "rgba(0, 89, 156, 0.4)",
   },
-
-  // Category 02 — Web Development
   {
     id: "css",
     name: "CSS",
@@ -167,17 +288,6 @@ export const SKILLS_DATA: Skill[] = [
     color: "#1572B6",
     glowColor: "rgba(21, 114, 182, 0.4)",
   },
-  {
-    id: "web-development",
-    name: "Web Development",
-    category: "Web Development",
-    categoryLabel: "Development Area",
-    iconName: "web",
-    color: "#38BDF8",
-    glowColor: "rgba(56, 189, 248, 0.4)",
-  },
-
-  // Category 03 — Databases
   {
     id: "sql",
     name: "SQL",
@@ -205,8 +315,6 @@ export const SKILLS_DATA: Skill[] = [
     color: "#336791",
     glowColor: "rgba(51, 103, 145, 0.4)",
   },
-
-  // Category 04 — AI & Data
   {
     id: "machine-learning",
     name: "Machine Learning",
@@ -234,8 +342,6 @@ export const SKILLS_DATA: Skill[] = [
     color: "#8B5CF6",
     glowColor: "rgba(139, 92, 246, 0.4)",
   },
-
-  // Category 05 — Computer Science
   {
     id: "data-structures",
     name: "Data Structures",
@@ -254,8 +360,6 @@ export const SKILLS_DATA: Skill[] = [
     color: "#10B981",
     glowColor: "rgba(16, 185, 129, 0.4)",
   },
-
-  // Category 06 — Development Tools
   {
     id: "vscode",
     name: "Visual Studio Code",

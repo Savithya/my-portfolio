@@ -9,28 +9,35 @@ type CategoryTab =
   | "All Skills"
   | "Languages"
   | "Web Development"
-  | "Databases"
-  | "AI & Data"
-  | "Tools"
-  | "Core Concepts";
+  | "Tools & DevOps"
+  | "UI/UX & Design";
 
 const CATEGORIES: CategoryTab[] = [
   "All Skills",
   "Languages",
   "Web Development",
-  "Databases",
-  "AI & Data",
-  "Tools",
-  "Core Concepts",
+  "Tools & DevOps",
+  "UI/UX & Design",
 ];
 
 export default function SkillsSection() {
   const [activeTab, setActiveTab] = useState<CategoryTab>("All Skills");
 
+  const getCategoryCount = (cat: CategoryTab) => {
+    if (cat === "All Skills") return SKILLS_DATA.length;
+    return SKILLS_DATA.filter(
+      (s) => s.category === cat || (s.categories && s.categories.includes(cat))
+    ).length;
+  };
+
   const filteredSkills =
     activeTab === "All Skills"
       ? SKILLS_DATA
-      : SKILLS_DATA.filter((s) => s.category === activeTab);
+      : SKILLS_DATA.filter(
+          (s) =>
+            s.category === activeTab ||
+            (s.categories && s.categories.includes(activeTab))
+        );
 
   return (
     <section
@@ -80,17 +87,27 @@ export default function SkillsSection() {
           >
             {CATEGORIES.map((cat) => {
               const isActive = activeTab === cat;
+              const count = getCategoryCount(cat);
               return (
                 <button
                   key={cat}
                   onClick={() => setActiveTab(cat)}
-                  className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 border ${
+                  className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 border ${
                     isActive
                       ? "bg-blue-600 text-white border-blue-500 shadow-md shadow-blue-500/20 scale-105"
                       : "bg-[#151D2E]/70 dark:bg-[#151D2E]/70 light:bg-white text-slate-400 dark:text-slate-400 light:text-slate-600 border-[#293449] dark:border-[#293449] light:border-slate-300 hover:text-white dark:hover:text-white light:hover:text-slate-900 hover:border-slate-600"
                   }`}
                 >
-                  {cat}
+                  <span>{cat}</span>
+                  <span
+                    className={`px-1.5 py-0.2 rounded-full text-[11px] font-semibold ${
+                      isActive
+                        ? "bg-white/20 text-white"
+                        : "bg-[#1E293B] text-slate-400"
+                    }`}
+                  >
+                    {count}
+                  </span>
                 </button>
               );
             })}
@@ -118,9 +135,9 @@ export default function SkillsSection() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Subtle bottom note confirming authentic curriculum skills */}
+        {/* Subtle bottom note confirming technologies */}
         <div className="mt-12 text-center text-xs text-slate-500 dark:text-slate-500 light:text-slate-400">
-          Core technical areas developed through university computing coursework, academic research, and project implementations.
+          Core technical competencies and creative toolsets applied in software engineering, modern web applications, and digital workflows.
         </div>
       </div>
     </section>
