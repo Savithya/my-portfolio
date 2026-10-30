@@ -51,7 +51,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="font-sans antialiased bg-[#060914] text-[#F8FAFC]">
+      <body className="font-sans antialiased bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300">
         {children}
       </body>
     </html>
