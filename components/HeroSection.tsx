@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 import {
@@ -186,27 +187,14 @@ export default function HeroSection() {
 
             {/* Rotating gradient ring */}
             <div className="relative w-full h-full rounded-full p-1 bg-gradient-to-tr from-blue-500 via-purple-500 to-cyan-400 shadow-2xl">
-              <div className="w-full h-full rounded-full bg-[#0E1526] dark:bg-[#0E1526] light:bg-slate-100 overflow-hidden flex flex-col items-center justify-center relative border-4 border-[#060914] dark:border-[#060914] light:border-white">
-                {/* Tech Avatar / Profile Representation */}
-                <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 via-transparent to-purple-950/40" />
-
-                <div className="z-10 flex flex-col items-center text-center p-6 select-none">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-white shadow-xl mb-4 border-2 border-blue-400/40">
-                    <span className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-                      SM
-                    </span>
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white dark:text-white light:text-slate-900">
-                    Savithya Muthunima
-                  </h3>
-                  <p className="text-xs sm:text-sm text-cyan-400 font-medium mt-1">
-                    CS & AI Undergraduate
-                  </p>
-                  <p className="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 mt-1">
-                    Software Development & Security
-                  </p>
-                </div>
-              </div>
+            <div className="relative w-full h-full rounded-full bg-[#0E1526] overflow-hidden border-4 border-[#060914] dark:border-[#060914] light:border-white">
+               <Image
+                  src="/profile.jpg"
+                  alt="Savithya Muthunima"
+                  fill
+                  className="object-cover"
+                  priority
+               />
             </div>
 
             {/* Floating Decorative Badges */}
