@@ -13,6 +13,7 @@ import {
   AlertCircle,
   Copy,
   ExternalLink,
+  Phone,
 } from "lucide-react";
 
 export default function ContactSection() {
@@ -26,7 +27,8 @@ export default function ContactSection() {
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -69,8 +71,14 @@ export default function ContactSection() {
 
   const copyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.social.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const copyPhone = () => {
+    navigator.clipboard.writeText(PERSONAL_INFO.social.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   return (
@@ -111,7 +119,7 @@ export default function ContactSection() {
                 Contact Information
               </h3>
               <p className="text-sm text-slate-400 dark:text-slate-400 light:text-slate-600 mb-6">
-                Feel free to reach out directly via email or connect with me on LinkedIn and GitHub.
+                Feel free to reach out directly via email, phone, or connect with me on LinkedIn and GitHub.
               </p>
 
               <div className="space-y-4">
@@ -137,9 +145,43 @@ export default function ContactSection() {
                     type="button"
                     onClick={copyEmail}
                     title="Copy Email Address"
+                    aria-label="Copy Email Address"
                     className="p-2 rounded-lg bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-white dark:hover:text-white light:hover:text-slate-900 border border-[#293449] dark:border-[#293449] light:border-slate-300 transition-colors flex-shrink-0"
                   >
-                    {copied ? (
+                    {copiedEmail ? (
+                      <CheckCircle className="w-4 h-4 text-emerald-400" />
+                    ) : (
+                      <Copy className="w-4 h-4" />
+                    )}
+                  </button>
+                </div>
+
+                {/* Contact Number Item */}
+                <div className="p-4 rounded-xl bg-[#1C263B]/60 dark:bg-[#1C263B]/60 light:bg-slate-50 border border-[#2B3954] dark:border-[#2B3954] light:border-slate-200 flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 rounded-lg bg-indigo-500/15 text-indigo-400 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="text-[11px] uppercase tracking-wider text-slate-400 block font-semibold">
+                        Contact Number
+                      </span>
+                      <a
+                        href={`tel:${PERSONAL_INFO.social.phone.replace(/\s+/g, "")}`}
+                        className="text-xs sm:text-sm font-semibold text-white dark:text-white light:text-slate-900 hover:text-indigo-400 truncate block transition-colors"
+                      >
+                        {PERSONAL_INFO.social.phone}
+                      </a>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={copyPhone}
+                    title="Copy Contact Number"
+                    aria-label="Copy Contact Number"
+                    className="p-2 rounded-lg bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-white dark:hover:text-white light:hover:text-slate-900 border border-[#293449] dark:border-[#293449] light:border-slate-300 transition-colors flex-shrink-0"
+                  >
+                    {copiedPhone ? (
                       <CheckCircle className="w-4 h-4 text-emerald-400" />
                     ) : (
                       <Copy className="w-4 h-4" />

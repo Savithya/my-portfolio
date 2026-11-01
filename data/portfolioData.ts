@@ -91,6 +91,7 @@ export const PERSONAL_INFO = {
     github: "https://github.com/Savithya",
     linkedin: "https://www.linkedin.com/in/savithya-muthunima-b72665418",
     email: "Savithyamuthunima9@gmail.com",
+    phone: "074 225 5014",
     location: "Sri Lanka",
   },
   cvFileName: "Savithya_Muthunima_CV.pdf",
@@ -250,6 +251,28 @@ export const SKILLS_DATA: Skill[] = [
     iconName: "photoshop",
     color: "#31A8FF",
     glowColor: "rgba(49, 168, 255, 0.4)",
+  },
+  // 12. Power BI
+  {
+    id: "power-bi",
+    name: "Power BI",
+    category: "AI & Data",
+    categories: ["AI & Data", "Tools"],
+    categoryLabel: "Data Visualization & Analytics",
+    iconName: "powerbi",
+    color: "#F2C811",
+    glowColor: "rgba(242, 200, 17, 0.4)",
+  },
+  // 13. Google Colab
+  {
+    id: "google-colab",
+    name: "Google Colab",
+    category: "AI & Data",
+    categories: ["AI & Data", "Tools"],
+    categoryLabel: "Cloud AI & Data Science",
+    iconName: "google-colab",
+    color: "#F9AB00",
+    glowColor: "rgba(249, 171, 0, 0.4)",
   },
 ];
 

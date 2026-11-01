@@ -35,14 +35,23 @@ export default function SkillsSection() {
   // Extract available categories from skills
   const categories = useMemo(() => {
     const cats = new Set<string>();
-    allSkills.forEach((skill) => cats.add(skill.category));
+    allSkills.forEach((skill) => {
+      cats.add(skill.category);
+      if (skill.categories) {
+        skill.categories.forEach((cat) => cats.add(cat));
+      }
+    });
     return ["All", ...Array.from(cats)];
   }, [allSkills]);
 
   // Filter skills by category
   const filteredSkills = useMemo(() => {
     if (activeCategory === "All") return allSkills;
-    return allSkills.filter((skill) => skill.category === activeCategory);
+    return allSkills.filter(
+      (skill) =>
+        skill.category === activeCategory ||
+        (skill.categories && skill.categories.includes(activeCategory))
+    );
   }, [allSkills, activeCategory]);
 
   return (

@@ -114,8 +114,10 @@ export default function Navbar() {
 
             {/* Download CV Button */}
             <a
-              href={`/${PERSONAL_INFO.cvFileName}`}
+              href={`/${encodeURIComponent(PERSONAL_INFO.cvFileName)}`}
               download={PERSONAL_INFO.cvFileName}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/25 hover:from-blue-500 hover:to-indigo-500 hover:scale-105 active:scale-95 transition-all duration-200"
             >
               <Download className="w-3.5 h-3.5" />
@@ -165,8 +167,10 @@ export default function Navbar() {
             })}
             <div className="pt-3 mt-2 border-t border-slate-800 dark:border-slate-800 light:border-slate-200">
               <a
-                href={`/${PERSONAL_INFO.cvFileName}`}
+                href={`/${encodeURIComponent(PERSONAL_INFO.cvFileName)}`}
                 download={PERSONAL_INFO.cvFileName}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-500/20"
               >

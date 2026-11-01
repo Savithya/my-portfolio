@@ -15,6 +15,7 @@ import {
   ShieldCheck,
   Brain,
   Code2,
+  Phone,
 } from "lucide-react";
 
 export default function HeroSection() {
@@ -117,8 +118,10 @@ export default function HeroSection() {
             </button>
 
             <a
-              href={`/${PERSONAL_INFO.cvFileName}`}
+              href={`/${encodeURIComponent(PERSONAL_INFO.cvFileName)}`}
               download={PERSONAL_INFO.cvFileName}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-200 dark:text-slate-200 light:text-slate-800 border border-[#293449] dark:border-[#293449] light:border-slate-300 hover:border-blue-500 hover:text-white dark:hover:text-white hover:scale-105 active:scale-95 shadow-sm transition-all duration-200"
             >
               <Download className="w-4 h-4 text-blue-400" />
@@ -165,6 +168,13 @@ export default function HeroSection() {
                 className="p-2.5 rounded-full bg-[#151D2E] dark:bg-[#151D2E] light:bg-slate-100 border border-[#293449] dark:border-[#293449] light:border-slate-300 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-white hover:border-blue-500 hover:bg-blue-600/20 hover:scale-110 transition-all duration-200"
               >
                 <Mail className="w-4 h-4 text-purple-400" />
+              </a>
+              <a
+                href={`tel:${PERSONAL_INFO.social.phone.replace(/\s+/g, "")}`}
+                aria-label="Direct Phone"
+                className="p-2.5 rounded-full bg-[#151D2E] dark:bg-[#151D2E] light:bg-slate-100 border border-[#293449] dark:border-[#293449] light:border-slate-300 text-slate-300 dark:text-slate-300 light:text-slate-700 hover:text-white hover:border-emerald-500 hover:bg-emerald-600/20 hover:scale-110 transition-all duration-200"
+              >
+                <Phone className="w-4 h-4 text-emerald-400" />
               </a>
             </div>
           </div>

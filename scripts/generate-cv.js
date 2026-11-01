@@ -25,7 +25,7 @@ function generateCvPdf() {
     // Contact
     "/F2 9 Tf",
     "0 -15 Td",
-    "(Email: Savithyamuthunima9@gmail.com | Location: Sri Lanka | GitHub: github.com/Savithya) Tj",
+    "(Email: Savithyamuthunima9@gmail.com | Phone: 074 225 5014 | Location: Sri Lanka) Tj",
     
     // Line separator
     "0 -12 Td",

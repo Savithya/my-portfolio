@@ -2,7 +2,7 @@
 
 import React from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { Github, Linkedin, Mail, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Phone } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -83,6 +83,14 @@ export default function Footer() {
             className="p-2.5 rounded-xl bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-purple-400 border border-[#293449] dark:border-[#293449] light:border-slate-200 hover:border-blue-500 transition-colors"
           >
             <Mail className="w-4 h-4" />
+          </a>
+
+          <a
+            href={`tel:${PERSONAL_INFO.social.phone.replace(/\s+/g, "")}`}
+            aria-label="Phone"
+            className="p-2.5 rounded-xl bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-emerald-400 border border-[#293449] dark:border-[#293449] light:border-slate-200 hover:border-blue-500 transition-colors"
+          >
+            <Phone className="w-4 h-4" />
           </a>
 
           <button
