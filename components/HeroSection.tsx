@@ -228,7 +228,7 @@ export default function HeroSection() {
             >
               <Code2 className="w-4 h-4 text-blue-400" />
               <span className="text-xs font-semibold text-slate-200 dark:text-slate-200 light:text-slate-800">
-                Full-Stack
+                Software Dev
               </span>
             </motion.div>
           </div>

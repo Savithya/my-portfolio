@@ -135,3 +135,37 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.15) 20%, rgba(168, 85, 247, 0.2) 50%, rgba(59, 130, 246, 0.15) 80%, transparent 100%);
+  pointer-events: none;
+}
+
+.light section::after {
+  background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.08) 20%, rgba(168, 85, 247, 0.1) 50%, rgba(59, 130, 246, 0.08) 80%, transparent 100%);
+}
+
+/* Focus visible styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #3B82F6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
