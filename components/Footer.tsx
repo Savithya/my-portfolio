@@ -2,7 +2,7 @@
 
 import React from "react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
-import { Github, Linkedin, Mail, ArrowUp, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUp, Phone, Heart } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,21 +24,36 @@ export default function Footer() {
     { name: "Contact", href: "#contact" },
   ];
 
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <footer className="relative bg-[#060914] dark:bg-[#060914] light:bg-[#F8FAFC] border-t border-[#1E293B] text-slate-400 py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-[#050814] dark:bg-[#050814] light:bg-[#FAFAFC] border-t border-[#1C274C] text-slate-400 py-14 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Brand & Identity */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="flex items-center gap-2 group mb-2">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center font-bold text-white shadow-md">
-              SM
+          <div className="flex items-center gap-3 group mb-2.5">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-600 p-[1.5px] shadow-lg shadow-violet-500/25">
+              <div className="w-full h-full rounded-[10px] bg-[#090E23] flex items-center justify-center">
+                <span className="font-extrabold text-xs bg-gradient-to-r from-violet-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent">
+                  SM
+                </span>
+              </div>
             </div>
-            <span className="font-bold text-lg text-white dark:text-white light:text-slate-900">
+            <span className="font-bold text-lg text-white dark:text-white light:text-slate-900 tracking-tight">
               Savithya Muthunima
             </span>
           </div>
-          <p className="text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 max-w-sm">
-            IT Undergraduate | Computer Science & AI Student | Aspiring Software Developer
+          <p className="text-xs text-slate-400 dark:text-slate-400 light:text-slate-600 max-w-sm leading-relaxed">
+            IT Undergraduate &bull; Computer Science &amp; AI &bull; Aspiring Software Developer
           </p>
         </div>
 
@@ -48,7 +63,8 @@ export default function Footer() {
             <a
               key={link.name}
               href={link.href}
-              className="text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 transition-colors"
+              onClick={(e) => handleNavClick(e, link.href)}
+              className="text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-violet-400 dark:hover:text-white light:hover:text-violet-600 transition-colors"
             >
               {link.name}
             </a>
@@ -56,13 +72,13 @@ export default function Footer() {
         </div>
 
         {/* Social Icons & Back to Top */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5">
           <a
             href={PERSONAL_INFO.social.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="p-2.5 rounded-xl bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-white border border-[#293449] dark:border-[#293449] light:border-slate-200 hover:border-blue-500 transition-colors"
+            aria-label="GitHub Profile"
+            className="p-2.5 rounded-xl bg-[#0E1530] dark:bg-[#0E1530] light:bg-white text-slate-400 hover:text-white border border-[#1C274C] dark:border-[#1C274C] light:border-slate-200 hover:border-violet-500 transition-colors"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -71,24 +87,24 @@ export default function Footer() {
             href={PERSONAL_INFO.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="p-2.5 rounded-xl bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-blue-400 border border-[#293449] dark:border-[#293449] light:border-slate-200 hover:border-blue-500 transition-colors"
+            aria-label="LinkedIn Profile"
+            className="p-2.5 rounded-xl bg-[#0E1530] dark:bg-[#0E1530] light:bg-white text-slate-400 hover:text-blue-400 border border-[#1C274C] dark:border-[#1C274C] light:border-slate-200 hover:border-blue-500 transition-colors"
           >
             <Linkedin className="w-4 h-4" />
           </a>
 
           <a
             href={`mailto:${PERSONAL_INFO.social.email}`}
-            aria-label="Email"
-            className="p-2.5 rounded-xl bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-purple-400 border border-[#293449] dark:border-[#293449] light:border-slate-200 hover:border-blue-500 transition-colors"
+            aria-label="Email Address"
+            className="p-2.5 rounded-xl bg-[#0E1530] dark:bg-[#0E1530] light:bg-white text-slate-400 hover:text-violet-400 border border-[#1C274C] dark:border-[#1C274C] light:border-slate-200 hover:border-violet-500 transition-colors"
           >
             <Mail className="w-4 h-4" />
           </a>
 
           <a
             href={`tel:${PERSONAL_INFO.social.phone.replace(/\s+/g, "")}`}
-            aria-label="Phone"
-            className="p-2.5 rounded-xl bg-[#151D2E] dark:bg-[#151D2E] light:bg-white text-slate-400 hover:text-emerald-400 border border-[#293449] dark:border-[#293449] light:border-slate-200 hover:border-blue-500 transition-colors"
+            aria-label="Phone Number"
+            className="p-2.5 rounded-xl bg-[#0E1530] dark:bg-[#0E1530] light:bg-white text-slate-400 hover:text-emerald-400 border border-[#1C274C] dark:border-[#1C274C] light:border-slate-200 hover:border-emerald-500 transition-colors"
           >
             <Phone className="w-4 h-4" />
           </a>
@@ -97,16 +113,18 @@ export default function Footer() {
             type="button"
             onClick={scrollToTop}
             aria-label="Back to top"
-            className="p-2.5 rounded-xl bg-blue-600 text-white hover:bg-blue-500 shadow-sm transition-colors ml-2"
+            className="p-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-blue-600 text-white hover:from-violet-500 hover:to-blue-500 shadow-md shadow-violet-500/20 transition-all duration-200 ml-2"
           >
             <ArrowUp className="w-4 h-4" />
           </button>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-[#1E293B]/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-500 light:text-slate-400 gap-4 text-center sm:text-left">
-        <p>© {currentYear} Savithya Muthunima. All rights reserved.</p>
-        <p>Built with Next.js, TypeScript & Tailwind CSS.</p>
+      <div className="max-w-7xl mx-auto mt-8 pt-8 border-t border-[#1C274C]/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-500 light:text-slate-400 gap-4 text-center sm:text-left">
+        <p>&copy; {currentYear} Savithya Muthunima. All rights reserved.</p>
+        <p className="flex items-center justify-center gap-1">
+          Built with Next.js, TypeScript &amp; Tailwind CSS.
+        </p>
       </div>
     </footer>
   );

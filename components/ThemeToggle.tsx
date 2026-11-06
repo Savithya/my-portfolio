@@ -40,7 +40,7 @@ export default function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center gap-1 p-1 rounded-full bg-slate-900/60 border border-slate-700/60 w-[72px] h-[34px]" />
+      <div className="flex items-center gap-1 p-1 rounded-full bg-[#0E1530] border border-[#1C274C] w-[72px] h-[34px]" />
     );
   }
 
@@ -48,7 +48,7 @@ export default function ThemeToggle() {
     <div
       role="radiogroup"
       aria-label="Color theme switcher (Dark / Light)"
-      className="flex items-center gap-1 p-1 rounded-full bg-slate-900/80 dark:bg-[#151D2E]/90 light:bg-slate-200/90 border border-slate-700/70 dark:border-[#293449] light:border-slate-300 backdrop-blur-md shadow-inner transition-colors"
+      className="flex items-center gap-1 p-1 rounded-full bg-[#0E1530] dark:bg-[#0E1530] light:bg-slate-200/90 border border-[#1C274C] dark:border-[#1C274C] light:border-slate-300 backdrop-blur-md shadow-inner transition-colors"
     >
       <button
         type="button"
@@ -58,7 +58,7 @@ export default function ThemeToggle() {
         onClick={() => handleSelect("dark")}
         className={`p-1.5 rounded-full transition-all duration-200 ${
           theme === "dark"
-            ? "bg-blue-600 text-white shadow-sm shadow-blue-500/30 scale-105"
+            ? "bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-sm shadow-violet-500/30 scale-105"
             : "text-slate-400 hover:text-slate-200 light:text-slate-600 light:hover:text-slate-900"
         }`}
         title="Dark Mode"
@@ -74,7 +74,7 @@ export default function ThemeToggle() {
         onClick={() => handleSelect("light")}
         className={`p-1.5 rounded-full transition-all duration-200 ${
           theme === "light"
-            ? "bg-blue-600 text-white shadow-sm shadow-blue-500/30 scale-105"
+            ? "bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-sm shadow-violet-500/30 scale-105"
             : "text-slate-400 hover:text-slate-200 light:text-slate-600 light:hover:text-slate-900"
         }`}
         title="Light Mode"

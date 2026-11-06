@@ -9,7 +9,8 @@ export default function ScrollProgress() {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;
       const windowHeight =
-        document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
       if (windowHeight > 0) {
         const scrollPercent = (totalScroll / windowHeight) * 100;
         setProgress(scrollPercent);
@@ -26,7 +27,7 @@ export default function ScrollProgress() {
       className="fixed top-0 left-0 right-0 h-[3px] z-[60] bg-transparent"
     >
       <div
-        className="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-400 transition-all duration-150 ease-out"
+        className="h-full bg-gradient-to-r from-violet-500 via-indigo-500 to-blue-400 transition-all duration-150 ease-out shadow-sm shadow-violet-500/50"
         style={{ width: `${progress}%` }}
       />
     </div>

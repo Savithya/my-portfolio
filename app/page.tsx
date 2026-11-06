@@ -12,11 +12,13 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollProgress from "@/components/ScrollProgress";
+import CommandPalette from "@/components/CommandPalette";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#060914] dark:bg-[#060914] light:bg-[#FAFAFC] text-slate-100 dark:text-slate-100 light:text-slate-900 selection:bg-blue-600/30">
+    <main className="relative min-h-screen bg-[#050814] dark:bg-[#050814] light:bg-[#FAFAFC] text-slate-100 dark:text-slate-100 light:text-slate-900 selection:bg-violet-600/35">
       <ScrollProgress />
+      <CommandPalette />
       <Navbar />
       <HeroSection />
       <AboutSection />
