@@ -65,24 +65,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Branding */}
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, "#home")}
-            className="flex items-center gap-2 group cursor-pointer"
-          >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-cyan-400 flex items-center justify-center font-bold text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              SM
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-base sm:text-lg text-white dark:text-white light:text-slate-900 group-hover:text-blue-400 transition-colors">
-                Savithya Muthunima
-              </span>
-              <span className="text-[11px] text-slate-400 dark:text-slate-400 light:text-slate-500 tracking-tight -mt-1 hidden sm:block">
-                IT Undergraduate & Developer
-              </span>
-            </div>
-          </a>
+          {/* Logo / Branding - removed */}
 
           {/* Desktop Navigation */}
           <nav
