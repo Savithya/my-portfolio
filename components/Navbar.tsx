@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
-import { Download, Menu, X, Command } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { PERSONAL_INFO } from "@/data/portfolioData";
 
 const NAV_ITEMS = [
@@ -55,12 +55,6 @@ export default function Navbar() {
     }
   };
 
-  const openCommandPalette = () => {
-    window.dispatchEvent(
-      new KeyboardEvent("keydown", { key: "k", ctrlKey: true, metaKey: true })
-    );
-  };
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -71,32 +65,6 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Creative Personal Logo: SM Monogram */}
-          <a
-            href="#home"
-            onClick={(e) => handleNavClick(e, "#home")}
-            className="group flex items-center gap-3 select-none"
-            aria-label="Savithya Muthunima - Home"
-          >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-violet-600 via-indigo-600 to-blue-600 p-[1.5px] shadow-lg shadow-violet-500/20 group-hover:shadow-violet-500/40 group-hover:scale-105 transition-all duration-300">
-              <div className="w-full h-full rounded-[10px] bg-[#090E23] dark:bg-[#090E23] light:bg-white flex items-center justify-center">
-                <span className="font-extrabold text-sm tracking-tight bg-gradient-to-r from-violet-400 via-blue-400 to-cyan-300 bg-clip-text text-transparent group-hover:from-violet-300 group-hover:to-white transition-all">
-                  SM
-                </span>
-              </div>
-              <span className="absolute -bottom-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-400 ring-2 ring-[#050814] dark:ring-[#050814] light:ring-white" />
-            </div>
-
-            <div className="hidden sm:flex flex-col">
-              <span className="text-sm font-bold text-white dark:text-white light:text-slate-900 tracking-tight group-hover:text-violet-400 dark:group-hover:text-violet-400 light:group-hover:text-violet-600 transition-colors">
-                Savithya Muthunima
-              </span>
-              <span className="text-[10px] font-mono text-slate-400 dark:text-slate-400 light:text-slate-500 tracking-wider uppercase">
-                Software Dev &bull; AI
-              </span>
-            </div>
-          </a>
-
           {/* Desktop Navigation */}
           <nav
             aria-label="Main Navigation"
@@ -122,21 +90,7 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Area */}
-          <div className="hidden sm:flex items-center gap-2.5">
-            {/* Command Palette Trigger */}
-            <button
-              type="button"
-              onClick={openCommandPalette}
-              title="Open Command Palette (Ctrl + K)"
-              aria-label="Open Command Palette"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0E1530] dark:bg-[#0E1530] light:bg-slate-100 text-slate-300 dark:text-slate-300 light:text-slate-700 border border-[#1C274C] dark:border-[#1C274C] light:border-slate-300 hover:border-violet-500/50 hover:text-white dark:hover:text-white transition-all shadow-sm"
-            >
-              <Command className="w-3.5 h-3.5 text-violet-400" />
-              <span className="hidden md:inline font-mono text-[10px] text-slate-400">
-                ⌘K
-              </span>
-            </button>
-
+          <div className="hidden sm:flex items-center gap-3">
             <ThemeToggle />
 
             {/* Download CV Button */}
@@ -153,15 +107,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu & Theme Toggle */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              type="button"
-              onClick={openCommandPalette}
-              aria-label="Open Command Palette"
-              className="p-2 rounded-xl bg-[#0E1530] dark:bg-[#0E1530] light:bg-slate-100 border border-[#1C274C] dark:border-[#1C274C] light:border-slate-300 text-slate-300"
-            >
-              <Command className="w-4 h-4 text-violet-400" />
-            </button>
+          <div className="flex items-center gap-2 ml-auto lg:hidden">
             <ThemeToggle />
             <button
               type="button"
